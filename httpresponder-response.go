@@ -59,132 +59,132 @@ func Success_IMUsed(w http.ResponseWriter) { SUCCESS_226(w) }
 // -----------------------------------------------------
 
 // 400 - Bad Request: The server cannot process the request due to client error / El servidor no puede procesar la solicitud debido a un error del cliente / Сервер не может обработать запрос из-за ошибки клиента
-func CliError_BadRequest(w http.ResponseWriter, message string) { ERROR_400(w, message) }
+func Client_BadRequest(w http.ResponseWriter, message string) { ERROR_400(w, message) }
 
 // 401 - Unauthorized: Authentication is required and has failed or not been provided / Se requiere autenticación y ha fallado o no se ha proporcionado / Требуется аутентификация, которая не удалась или не была предоставлена
-func CliError_Unauthorized(w http.ResponseWriter, message string) { ERROR_401(w, message) }
+func Client_Unauthorized(w http.ResponseWriter, message string) { ERROR_401(w, message) }
 
 // 402 - Payment Required: Reserved for future use, currently used by some services for payment-related issues / Reservado para uso futuro, actualmente utilizado por algunos servicios para problemas relacionados con el pago / Зарезервировано для будущего использования, в настоящее время используется некоторыми сервисами для проблем, связанных с оплатой
-func CliError_PaymentRequired(w http.ResponseWriter, message string) { ERROR_402(w, message) }
+func Client_PaymentRequired(w http.ResponseWriter, message string) { ERROR_402(w, message) }
 
 // 403 - Forbidden: The server understands the request but refuses to authorize it / El servidor entiende la solicitud pero se niega a autorizarla / Сервер понимает запрос, но отказывается его авторизовать
-func CliError_Forbidden(w http.ResponseWriter, message string) { ERROR_403(w, message) }
+func Client_Forbidden(w http.ResponseWriter, message string) { ERROR_403(w, message) }
 
 // 404 - Not Found: The requested resource could not be found on the server / El recurso solicitado no se pudo encontrar en el servidor / Запрашиваемый ресурс не найден на сервере
-func CliError_NotFound(w http.ResponseWriter, message string) { ERROR_404(w, message) }
+func Client_NotFound(w http.ResponseWriter, message string) { ERROR_404(w, message) }
 
 // 405 - Method Not Allowed: The request method is not supported for the requested resource / El método de solicitud no es compatible con el recurso solicitado / Метод запроса не поддерживается для запрашиваемого ресурса
-func CliError_MethodNotAllowed(w http.ResponseWriter, message string) { ERROR_405(w, message) }
+func Client_MethodNotAllowed(w http.ResponseWriter, message string) { ERROR_405(w, message) }
 
 // 406 - Not Acceptable: The requested resource is capable of generating only content not acceptable according to the Accept headers / El recurso solicitado solo puede generar contenido no aceptable según los encabezados Accept enviados en la solicitud / Запрашиваемый ресурс может генерировать только неприемлемый контент в соответствии с заголовками Accept, отправленными в запросе
-func CliError_NotAcceptable(w http.ResponseWriter, message string) { ERROR_406(w, message) }
+func Client_NotAcceptable(w http.ResponseWriter, message string) { ERROR_406(w, message) }
 
 // 407 - Proxy Authentication Required: The client must authenticate itself with the proxy / El cliente debe autenticarse primero con el proxy / Клиент должен сначала пройти аутентификацию через прокси
-func CliError_ProxyAuthenticationRequired(w http.ResponseWriter, message string) {
+func Client_ProxyAuthenticationRequired(w http.ResponseWriter, message string) {
 	ERROR_407(w, message)
 }
 
 // 408 - Request Timeout: The server timed out waiting for the request / El servidor agotó el tiempo de espera para la solicitud / Сервер ожидал запрос слишком долго
-func CliError_RequestTimeout(w http.ResponseWriter, message string) { ERROR_408(w, message) }
+func Client_RequestTimeout(w http.ResponseWriter, message string) { ERROR_408(w, message) }
 
 // 409 - Conflict: The request could not be processed because of conflict in the current state of the resource / La solicitud no se pudo procesar debido a un conflicto en el estado actual del recurso / Запрос не может быть обработан из-за конфликта в текущем состоянии ресурса
-func CliError_Conflict(w http.ResponseWriter, message string) { ERROR_409(w, message) }
+func Client_Conflict(w http.ResponseWriter, message string) { ERROR_409(w, message) }
 
 // 410 - Gone: The resource requested is no longer available and will not be available again / El recurso solicitado ya no está disponible y no estará disponible de nuevo / Запрашиваемый ресурс больше недоступен и не будет доступен снова
-func CliError_Gone(w http.ResponseWriter, message string) { ERROR_410(w, message) }
+func Client_Gone(w http.ResponseWriter, message string) { ERROR_410(w, message) }
 
 // 411 - Length Required: The request did not specify the length of its content, which is required by the requested resource / La solicitud no especificó la longitud de su contenido, que es requerida por el recurso solicitado / В запросе не указана длина его содержимого, что требуется для запрашиваемого ресурса
-func CliError_LengthRequired(w http.ResponseWriter, message string) { ERROR_411(w, message) }
+func Client_LengthRequired(w http.ResponseWriter, message string) { ERROR_411(w, message) }
 
 // 412 - Precondition Failed: The server does not meet one of the preconditions that the requester put on the request / El servidor no cumple con una de las condiciones previas que el solicitante puso en los campos del encabezado de la solicitud / Сервер не соответствует одному из предварительных условий, установленных клиентом в заголовках запроса
-func CliError_PreconditionFailed(w http.ResponseWriter, message string) { ERROR_412(w, message) }
+func Client_PreconditionFailed(w http.ResponseWriter, message string) { ERROR_412(w, message) }
 
 // 413 - Payload Too Large: The request is more extensive than the server is willing or able to process / La solicitud es más extensa de lo que el servidor está dispuesto o puede procesar / Запрос превышает максимальный размер, который сервер готов обработать
-func CliError_PayloadTooLarge(w http.ResponseWriter, message string) { ERROR_413(w, message) }
+func Client_PayloadTooLarge(w http.ResponseWriter, message string) { ERROR_413(w, message) }
 
 // 414 - URI Too Long: The URI provided was too long for the server to process / El URI proporcionado era demasiado largo para que el servidor lo procese / Указанный URI слишком длинный для обработки сервером
-func CliError_URITooLong(w http.ResponseWriter, message string) { ERROR_414(w, message) }
+func Client_URITooLong(w http.ResponseWriter, message string) { ERROR_414(w, message) }
 
 // 415 - Unsupported Media Type: The request entity has a media type which the server or resource does not support / La entidad de la solicitud tiene un tipo de medio que el servidor o el recurso no admite / Тело запроса имеет тип медиафайла, который не поддерживается сервером или ресурсом
-func CliError_UnsupportedMediaType(w http.ResponseWriter, message string) { ERROR_415(w, message) }
+func Client_UnsupportedMediaType(w http.ResponseWriter, message string) { ERROR_415(w, message) }
 
 // 416 - Range Not Satisfiable: The client asked for a portion of the file that the server cannot supply / El cliente pidió una parte del archivo que el servidor no puede suministrar / Клиент запросил часть файла, которую сервер не может предоставить
-func CliError_RangeNotSatisfiable(w http.ResponseWriter, message string) { ERROR_416(w, message) }
+func Client_RangeNotSatisfiable(w http.ResponseWriter, message string) { ERROR_416(w, message) }
 
 // 417 - Expectation Failed: The server cannot meet the requirements of the Expect request-header field / El servidor no puede cumplir con los requisitos del campo de encabezado Expect de la solicitud / Сервер не может соответствовать требованиям заголовка Expect запроса
-func CliError_ExpectationFailed(w http.ResponseWriter, message string) { ERROR_417(w, message) }
+func Client_ExpectationFailed(w http.ResponseWriter, message string) { ERROR_417(w, message) }
 
 // 418 - I'm a teapot: An Easter egg status code defined as a joke in RFC 2324 / Un código de estado de broma definido en RFC 2324 / Пасхальное яйцо, определенное в статусе RFC 2324
-func CliError_Teapot(w http.ResponseWriter, message string) { ERROR_418(w, message) }
+func Client_Teapot(w http.ResponseWriter, message string) { ERROR_418(w, message) }
 
 // 421 - Misdirected Request: The request was directed at a server that cannot produce a response / La solicitud fue dirigida a un servidor que no puede producir una respuesta / Запрос был направлен на сервер, который не может дать ответ
-func CliError_MisdirectedRequest(w http.ResponseWriter, message string) { ERROR_421(w, message) }
+func Client_MisdirectedRequest(w http.ResponseWriter, message string) { ERROR_421(w, message) }
 
 // 422 - Unprocessable Content: The request was well-formed but could not be processed / La solicitud estaba bien formada pero no pudo ser procesada / Запрос был корректно сформирован, но не может быть обработан
-func CliError_UnprocessableContent(w http.ResponseWriter, message string) { ERROR_422(w, message) }
+func Client_UnprocessableContent(w http.ResponseWriter, message string) { ERROR_422(w, message) }
 
 // 423 - Locked: The resource being accessed is locked / El recurso al que se intenta acceder está bloqueado / Ресурс, к которому осуществляется доступ, заблокирован
-func CliError_Locked(w http.ResponseWriter, message string) { ERROR_423(w, message) }
+func Client_Locked(w http.ResponseWriter, message string) { ERROR_423(w, message) }
 
 // 424 - Failed Dependency: The request failed because it depended on another request that failed / La solicitud falló porque dependía de otra solicitud que falló / Запрос не выполнен, так как зависел от другого запроса, который не выполнен
-func CliError_FailedDependency(w http.ResponseWriter, message string) { ERROR_424(w, message) }
+func Client_FailedDependency(w http.ResponseWriter, message string) { ERROR_424(w, message) }
 
 // 425 - Too Early: The server is unwilling to process a request that might be replayed / El servidor no está dispuesto a procesar una solicitud que podría repetirse / Сервер не хочет обрабатывать запрос, который может быть повторен
-func CliError_TooEarly(w http.ResponseWriter, message string) { ERROR_425(w, message) }
+func Client_TooEarly(w http.ResponseWriter, message string) { ERROR_425(w, message) }
 
 // 426 - Upgrade Required: The client should switch to a different protocol / El cliente debe cambiar a un protocolo diferente / Клиент должен переключиться на другой протокол
-func CliError_UpgradeRequired(w http.ResponseWriter, message string) { ERROR_426(w, message) }
+func Client_UpgradeRequired(w http.ResponseWriter, message string) { ERROR_426(w, message) }
 
 // 428 - Precondition Required: The origin server requires the request to be conditional to prevent conflicts / El servidor de origen requiere que la solicitud sea condicional para prevenir conflictos / Сервер-источник требует, чтобы запрос был условным для предотвращения конфликтов
-func CliError_PreconditionRequired(w http.ResponseWriter, message string) { ERROR_428(w, message) }
+func Client_PreconditionRequired(w http.ResponseWriter, message string) { ERROR_428(w, message) }
 
 // 429 - Too Many Requests: The user has sent too many requests in a given amount of time / El usuario ha enviado demasiadas solicitudes en un tiempo dado / Пользователь отправил слишком много запросов за определенное время
-func CliError_TooManyRequests(w http.ResponseWriter, message string) { ERROR_429(w, message) }
+func Client_TooManyRequests(w http.ResponseWriter, message string) { ERROR_429(w, message) }
 
 // 431 - Request Header Fields Too Large: The server is unwilling to process the request because the header fields are too large / El servidor no está dispuesto a procesar la solicitud porque los campos de encabezado son demasiado grandes / Сервер не желает обрабатывать запрос, поскольку поля заголовков слишком велики
-func CliError_RequestHeaderFieldsTooLarge(w http.ResponseWriter, message string) {
+func Client_RequestHeaderFieldsTooLarge(w http.ResponseWriter, message string) {
 	ERROR_431(w, message)
 }
 
 // 451 - Unavailable For Legal Reasons: A server operator has received a legal demand to deny access to a resource / Un operador de servidor ha recibido una orden legal para denegar el acceso a un recurso / Оператор сервера получил юридическое требование отказать в доступе к ресурсу
-func CliError_UnavailableForLegalReasons(w http.ResponseWriter, message string) {
+func Client_UnavailableForLegalReasons(w http.ResponseWriter, message string) {
 	ERROR_451(w, message)
 }
 
 // -----------------------------------------------------
 
 // 500 - Internal Server Error: Generic error message for unexpected server conditions / Mensaje de error genérico para condiciones inesperadas del servidor / Общий текст ошибки для неожиданных ситуаций на сервере
-func ServError_InternalServerError(w http.ResponseWriter, message string) { ERROR_500(w, message) }
+func Server_InternalServerError(w http.ResponseWriter, message string) { ERROR_500(w, message) }
 
 // 501 - Not Implemented: The server does not recognize the request method, or it lacks the ability to fulfill the request / El servidor no reconoce el método de solicitud, o carece de la capacidad para cumplir con la solicitud / Сервер не распознает метод запроса или не имеет возможности выполнить запрос
-func ServError_NotImplemented(w http.ResponseWriter, message string) { ERROR_501(w, message) }
+func Server_NotImplemented(w http.ResponseWriter, message string) { ERROR_501(w, message) }
 
 // 502 - Bad Gateway: The server received an invalid response from the upstream server while acting as a gateway or proxy / El servidor recibió una respuesta inválida del servidor ascendente mientras actuaba como una puerta de enlace o proxy / Сервер получил неверный ответ от вышестоящего сервера, действуя как шлюз или прокси
-func ServError_BadGateway(w http.ResponseWriter, message string) { ERROR_502(w, message) }
+func Server_BadGateway(w http.ResponseWriter, message string) { ERROR_502(w, message) }
 
 // 503 - Service Unavailable: The server is currently unable to handle the request due to being overloaded or down for maintenance / El servidor no puede manejar la solicitud actualmente debido a una sobrecarga o mantenimiento / В настоящее время сервер не может обработать запрос из-за перегрузки или на техническом обслуживании
-func ServError_ServiceUnavailable(w http.ResponseWriter, message string) { ERROR_503(w, message) }
+func Server_ServiceUnavailable(w http.ResponseWriter, message string) { ERROR_503(w, message) }
 
 // 504 - Gateway Timeout: The server did not receive a timely response from the upstream server while acting as a gateway or proxy / El servidor no recibió una respuesta oportuna del servidor ascendente mientras actuaba como una puerta de enlace o proxy / Сервер не получил своевременного ответа от вышестоящего сервера, действуя как шлюз или прокси
-func ServError_GatewayTimeout(w http.ResponseWriter, message string) { ERROR_504(w, message) }
+func Server_GatewayTimeout(w http.ResponseWriter, message string) { ERROR_504(w, message) }
 
 // 505 - HTTP Version Not Supported: The server does not support the HTTP version used in the request / El servidor no admite la versión HTTP utilizada en la solicitud / Сервер не поддерживает версию HTTP, используемую в запросе
-func ServError_HTTPVersionNotSupported(w http.ResponseWriter, message string) { ERROR_505(w, message) }
+func Server_HTTPVersionNotSupported(w http.ResponseWriter, message string) { ERROR_505(w, message) }
 
 // 506 - Variant Also Negotiates: Transparent content negotiation results in a circular reference / La negociación de contenido transparente da como resultado una referencia circular / Прозрачные переговоры о контенте приводят к циклической ссылке
-func ServError_VariantAlsoNegotiates(w http.ResponseWriter, message string) { ERROR_506(w, message) }
+func Server_VariantAlsoNegotiates(w http.ResponseWriter, message string) { ERROR_506(w, message) }
 
 // 507 - Insufficient Storage: The server is unable to store the representation needed to complete the request (WebDAV) / El servidor no puede almacenar la representación necesaria para completar la solicitud (WebDAV) / Сервер не может сохранить представление, необходимое для выполнения запроса (WebDAV)
-func ServError_InsufficientStorage(w http.ResponseWriter, message string) { ERROR_507(w, message) }
+func Server_InsufficientStorage(w http.ResponseWriter, message string) { ERROR_507(w, message) }
 
 // 508 - Loop Detected: The server detected an infinite loop while processing the request (WebDAV) / El servidor detectó un bucle infinito al procesar la solicitud (WebDAV) / Сервер обнаружил бесконечный цикл при обработке запроса (WebDAV)
-func ServError_LoopDetected(w http.ResponseWriter, message string) { ERROR_508(w, message) }
+func Server_LoopDetected(w http.ResponseWriter, message string) { ERROR_508(w, message) }
 
 // 510 - Not Extended: Further extensions to the request are required for the server to fulfill it / Se requieren más extensiones para que el servidor cumpla con la solicitud / Для выполнения запроса серверу требуются дополнительные расширения
-func ServError_NotExtended(w http.ResponseWriter, message string) { ERROR_510(w, message) }
+func Server_NotExtended(w http.ResponseWriter, message string) { ERROR_510(w, message) }
 
 // 511 - Network Authentication Required: The client needs to authenticate to gain network access / El cliente necesita autenticarse para obtener acceso a la red / Клиент должен пройти аутентификацию для доступа к сети
-func ServError_NetworkAuthenticationRequired(w http.ResponseWriter, message string) {
+func Server_NetworkAuthenticationRequired(w http.ResponseWriter, message string) {
 	ERROR_511(w, message)
 }
 
@@ -541,3 +541,23 @@ func ERROR_511(w http.ResponseWriter, message string) {
 }
 
 // Internet Infromation Services
+
+// 440 Login Time-out : The client's session has expired and must log in again. / La sesión del cliente ha expirado y debe iniciar sesión nuevamente. / Сеанс клиента истек, и ему необходимо войти в систему снова.
+func ERROR_440(w http.ResponseWriter, message string) {
+	err := "Login Time-out"
+	response := NewJsonResponse(message, nil, err)
+	RespondWithJSON(w, http.StatusUpgradeRequired, response)
+}
+
+// 440 Login Time-out : The client's session has expired and must log in again. / La sesión del cliente ha expirado y debe iniciar sesión nuevamente. / Сеанс клиента истек, и ему необходимо войти в систему снова.
+func Client_LoginTimeOut(w http.ResponseWriter, message string) { ERROR_440(w, message) }
+
+// 449 Retry With : The server cannot honour the request because the user has not provided the required information. / El servidor no puede cumplir con la solicitud porque el usuario no ha proporcionado la información requerida. / Сервер не может выполнить запрос, так как пользователь не предоставил необходимую информацию.
+func ERROR_449(w http.ResponseWriter, message string) {
+	err := "Retry With"
+	response := NewJsonResponse(message, nil, err)
+	RespondWithJSON(w, http.StatusUpgradeRequired, response)
+}
+
+// 449 Retry With : The server cannot honour the request because the user has not provided the required information. / El servidor no puede cumplir con la solicitud porque el usuario no ha proporcionado la información requerida. / Сервер не может выполнить запрос, так как пользователь не предоставил необходимую информацию.
+func Client_RetryWith(w http.ResponseWriter, message string) { ERROR_449(w, message) }
