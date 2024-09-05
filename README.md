@@ -14,7 +14,7 @@
 Para instalar la biblioteca, usa el siguiente comando:
 
 ```bash
-go get github.com/tu-usuario/http-responder
+go get github.com/raulbondarchuk/http-responder
 ```
 # Uso
 
