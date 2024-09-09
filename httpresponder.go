@@ -72,3 +72,12 @@ func CheckAndRespondJSON(w http.ResponseWriter, r *http.Request, object interfac
 	}
 	return nil
 }
+
+// Esta función convierte un objeto (o un modelo de objeto: ej. ExampleModel{}) a un formato JSON
+func ConvertObjectToJSON(obj interface{}) (string, error) {
+	jsonData, err := json.Marshal(obj)
+	if err != nil {
+		return "", err
+	}
+	return string(jsonData), nil
+}
