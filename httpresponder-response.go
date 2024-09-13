@@ -117,6 +117,9 @@ func Client_ExpectationFailed(w http.ResponseWriter, message string) { ERROR_417
 // 418 - I'm a teapot: An Easter egg status code defined as a joke in RFC 2324 / Un código de estado de broma definido en RFC 2324 / Пасхальное яйцо, определенное в статусе RFC 2324
 func Client_Teapot(w http.ResponseWriter, message string) { ERROR_418(w, message) }
 
+// 419 - indicates that the session has expired or is invalid, often due to CSRF token issues or inactivity. /  indica que la sesión ha expirado o es inválida, a menudo debido a problemas con el token CSRF o inactividad. /  указывает на истекшую или недействительную сессию, часто из-за проблем с CSRF токеном или бездействия.
+func Client_AuthenticationTimeout(w http.ResponseWriter, message string) { ERROR_419(w, message) }
+
 // 421 - Misdirected Request: The request was directed at a server that cannot produce a response / La solicitud fue dirigida a un servidor que no puede producir una respuesta / Запрос был направлен на сервер, который не может дать ответ
 func Client_MisdirectedRequest(w http.ResponseWriter, message string) { ERROR_421(w, message) }
 
@@ -387,6 +390,13 @@ func ERROR_417(w http.ResponseWriter, message string) {
 // 418 - I'm a teapot: An Easter egg status code defined as a joke in RFC 2324 / Un código de estado de broma definido en RFC 2324 / Пасхальное яйцо, определенное в статусе RFC 2324
 func ERROR_418(w http.ResponseWriter, message string) {
 	err := "I'm a teapot"
+	response := NewJsonResponse(message, nil, err)
+	RespondWithJSON(w, http.StatusTeapot, response)
+}
+
+// 419 - indicates that the session has expired or is invalid, often due to CSRF token issues or inactivity. /  indica que la sesión ha expirado o es inválida, a menudo debido a problemas con el token CSRF o inactividad. /  указывает на истекшую или недействительную сессию, часто из-за проблем с CSRF токеном или бездействия.
+func ERROR_419(w http.ResponseWriter, message string) {
+	err := "Authentication Timeout"
 	response := NewJsonResponse(message, nil, err)
 	RespondWithJSON(w, http.StatusTeapot, response)
 }
