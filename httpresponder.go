@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
 	"net/http"
 	"reflect"
 	"strings"
@@ -22,6 +23,13 @@ type JsonResponse struct {
 
 // Constructor para la respuesta JsonResponse
 func NewJsonResponse(message string, data interface{}, err string) JsonResponse {
+
+	if err != "" {
+		log.Printf("Message: %s, Data: %v, Error: %s", message, data, err)
+	} else {
+		log.Printf("Message: %s, Data: %v", message, data)
+	}
+
 	return JsonResponse{
 		Message: message,
 		Data:    data,
